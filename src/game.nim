@@ -1,28 +1,31 @@
 
+type GameResult* = enum
+    playerWon, botWon, draw
 
-proc play*(humanchoice, botchoice: string): string =
+
+proc play*(humanchoice, botchoice: string): GameResult =
     
     var possible_choice = ["Rocks", "Papers", "Scissors"]
 
     if humanchoice in possible_choice:
         if humanchoice == "Rocks" and botchoice == "Papers":
-            return "The bot won the game"
+            return botWon
         elif humanchoice == "Rocks" and botchoice == "Scissors":
-            return "You won the game"
+            return playerWon
         elif humanchoice == "Rocks" and botchoice == "Rocks":
-            return "Draw!"
+            return draw
         elif humanchoice == "Papers" and botchoice == "Scissors":
-            return "The bot won the game"
+            return botWon
         elif humanchoice == "Papers" and botchoice == "Rocks":
-            return "You won the game"
+            return playerWon
         elif humanchoice == "Papers" and botchoice == "Papers":
-            return "Draw!"
+            return draw
         elif humanchoice == "Scissors" and botchoice == "Rocks":
-            return "The bot won the game"
+            return botWon
         elif humanchoice == "Scissors" and botchoice == "Papers":
-            return "You won the game"
+            return playerWon
         else:
-            return "Draw!"
+            return draw
 
 
 

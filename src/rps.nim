@@ -18,9 +18,9 @@ routes:
     var botchoice = sample(possible_choice)
     var humanchoice = @"humanchoice"
     var status = play(humanchoice, botchoice)
-    if status == "The bot won the game":
+    if status == botWon:
       resp h1("The bot won the game")
-    elif status == "You won the game":
+    elif status == playerWon:
       resp h1("You won the game")
     else:
       resp h1("Draw!")
@@ -38,9 +38,9 @@ routes:
     var botchoice = sample(possible_choice)
     var humanchoice = @"humanchoice"
     var status = play(humanchoice, botchoice)
-    if status == "The bot won the game":
+    if status == botWon:
       json_response(Http200, string.customtext(botchoice, "The bot won the game"))
-    elif status == "You won the game":
+    elif status == playerWon:
       json_response(Http200, string.customtext(botchoice, "You won the game"))
     else:
       json_response(Http200, string.customtext(botchoice, "Draw!"))
