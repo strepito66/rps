@@ -3,7 +3,7 @@
 version       = "0.1.0"
 author        = "strepito"
 description   = "A new awesome nimble package"
-license       = "MIT"
+license       = "WTFPL"
 srcDir        = "src"
 bin           = @["rps"]
 
