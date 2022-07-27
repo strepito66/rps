@@ -18,12 +18,17 @@ routes:
     var botchoice = sample(possible_choice)
     var humanchoice = @"humanchoice"
     var status = play(humanchoice, botchoice)
-    if status == botWon:
-      resp h1("The bot won the game")
-    elif status == playerWon:
-      resp h1("You won the game")
-    else:
-      resp h1("Draw!")
+    resp h1(
+    case status:
+      of botWon:
+        "The bot won the game"
+      of playerWon:
+        "You won the game"
+      of draw:
+        "Draw!"
+      else:
+        "Invalid move: " & humanchoice
+    )
 
 
   #API#
